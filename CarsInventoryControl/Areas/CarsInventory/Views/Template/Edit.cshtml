@@ -1,0 +1,81 @@
+﻿@using CarsInventoryControl.Areas.CarsInventory.Models
+@{
+    ViewBag.Title = "Edit";
+}
+@model GridState
+
+<div class="affix col-md-offset-0">
+    <a class="" style="margin-right:15px; font-size:xx-large; cursor:pointer;" data-bind="click: back">BACK</a>
+</div>
+<div class="container">
+
+    <br />
+    <h2>Data Entry:</h2>
+    <div class="row">
+        <div class="container">
+
+            <div class="row">
+                <div data-bind="with:trueCarEntry" class="col-md-12">
+                    <table class="table table-condensed table-bordered">
+                        <thead>
+                            <tr class="text-primary">
+                                <th>Location</th>
+                                <th>Availability Control ID</th>
+                                <th>Requested By</th>
+                                <th>Warehouse</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="text-bold" data-bind="text: LocationNo"></td>
+                                <td class="text-bold" data-bind="text: AvailabilityControlId"></td>
+                                <td class="text-bold" data-bind="text: RequestedBy"></td>
+                                <td class="text-bold" data-bind="text: Warehouse"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <button class="btn btn-lg btn-danger" data-bind="click: deleteEntry">Delete</button>
+                </div>
+            </div>
+        </div>
+        <br>
+
+        <div class="container" data-bind="with:carEntry">
+            <h2>Edit:</h2>
+            <div class="col-md-12">
+                <div class="row col-md-12">
+                    <span class="col-md-2">Location</span>
+                    <input type="text" disabled class="col-md-6" data-bind="text: LocationNo, value: LocationNo,event: {keypress: $parent.onEnter},valueUpdate: 'afterkeydown'" />
+                    @*<input type="text" class="col-md-6" data-bind="text: LocationNo, value: LocationNo,event: {keypress: $parent.onEnter},valueUpdate: 'afterkeydown'" />*@
+                </div>
+                <div class="row col-md-12">
+                    <span class="col-md-2">Availability Control ID</span>
+                    <input type="text" class="col-md-6" data-bind="text: AvailabilityControlId, value: AvailabilityControlId,event: {keypress: $parent.onEnter},valueUpdate: 'afterkeydown'" />
+                </div>
+                <div class="row col-md-12">
+                    <span class="col-md-2">Requested By</span>
+                    <input type="text" class="col-md-6" data-bind="text: RequestedBy, value: RequestedBy,event: {keypress: $parent.onEnter},valueUpdate: 'afterkeydown'" />
+                </div>
+                <div class="row col-md-12">
+                    <span class="col-md-2">Warehouse</span>
+                    <input type="text" class="col-md-6" data-bind="text: Warehouse, value: Warehouse,event: {keypress: $parent.onEnter},valueUpdate: 'afterkeydown'" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-offset-1">
+            <button data-bind="visible: changed(), click: edit " class="btn btn-lg btn-info ">Save</button>
+        </div>
+    </div>
+</div>
+<script>
+    var ViewModelCar = new ViewModels.CarsInventory.Car(@Html.Raw(Json.Encode(Model)));
+    ko.applyBindings(ViewModelCar);
+</script>
+
+

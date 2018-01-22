@@ -1,0 +1,2 @@
+﻿ViewModels = {};
+ViewModels.CarsInventory = {};

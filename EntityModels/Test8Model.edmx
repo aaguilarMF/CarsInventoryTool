@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Test8Model.Store" Provider="Oracle.ManagedDataAccess.Client" ProviderManifestToken="11.2" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CARS_AVAILABILTY_CONTROL_TAB">
+          <Key>
+            <PropertyRef Name="LOCATION_NO" />
+          </Key>
+          <Property Name="LOCATION_NO" Type="varchar2" MaxLength="35" Nullable="false" />
+          <Property Name="AVAILABILITY_CONTROL_ID" Type="varchar2" MaxLength="25" />
+          <Property Name="REQUESTED_BY" Type="varchar2" MaxLength="35" />
+          <Property Name="ROWVERSION" Type="date" />
+          <Property Name="WAREHOUSE" Type="varchar2" MaxLength="20" />
+        </EntityType>
+        <EntityContainer Name="Test8ModelStoreContainer">
+          <EntitySet Name="CARS_AVAILABILTY_CONTROL_TAB" EntityType="Self.CARS_AVAILABILTY_CONTROL_TAB" Schema="CARX1APP" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Test8Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="CARS_AVAILABILTY_CONTROL_TAB">
+          <Key>
+            <PropertyRef Name="LOCATION_NO" />
+          </Key>
+          <Property Name="LOCATION_NO" Type="String" MaxLength="35" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="AVAILABILITY_CONTROL_ID" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="REQUESTED_BY" Type="String" MaxLength="35" FixedLength="false" Unicode="false" />
+          <Property Name="ROWVERSION" Type="DateTime" />
+          <Property Name="WAREHOUSE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="Test8Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CARS_AVAILABILTY_CONTROL_TAB" EntityType="Self.CARS_AVAILABILTY_CONTROL_TAB" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Test8ModelStoreContainer" CdmEntityContainer="Test8Entities">
+          <EntitySetMapping Name="CARS_AVAILABILTY_CONTROL_TAB">
+            <EntityTypeMapping TypeName="Test8Model.CARS_AVAILABILTY_CONTROL_TAB">
+              <MappingFragment StoreEntitySet="CARS_AVAILABILTY_CONTROL_TAB">
+                <ScalarProperty Name="LOCATION_NO" ColumnName="LOCATION_NO" />
+                <ScalarProperty Name="AVAILABILITY_CONTROL_ID" ColumnName="AVAILABILITY_CONTROL_ID" />
+                <ScalarProperty Name="REQUESTED_BY" ColumnName="REQUESTED_BY" />
+                <ScalarProperty Name="ROWVERSION" ColumnName="ROWVERSION" />
+                <ScalarProperty Name="WAREHOUSE" ColumnName="WAREHOUSE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Prod8ModelStoreContainer" CdmEntityContainer="Prod8Entities">
+    <EntitySetMapping Name="CARS_AVAILABILTY_CONTROL_TAB">
+      <EntityTypeMapping TypeName="Prod8Model.CARS_AVAILABILTY_CONTROL_TAB">
+        <MappingFragment StoreEntitySet="CARS_AVAILABILTY_CONTROL_TAB">
+          <ScalarProperty Name="LOCATION_NO" ColumnName="LOCATION_NO" />
+          <ScalarProperty Name="AVAILABILITY_CONTROL_ID" ColumnName="AVAILABILITY_CONTROL_ID" />
+          <ScalarProperty Name="REQUESTED_BY" ColumnName="REQUESTED_BY" />
+          <ScalarProperty Name="ROWVERSION" ColumnName="ROWVERSION" />
+          <ScalarProperty Name="WAREHOUSE" ColumnName="WAREHOUSE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

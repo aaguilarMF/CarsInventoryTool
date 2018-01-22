@@ -1,0 +1,11 @@
+C:\Users\aaguilar\Documents\Visual Studio 2015\Projects\CarsInventoryControl\EntityModels\bin\Release\EntityModels.dll.config
+C:\Users\aaguilar\Documents\Visual Studio 2015\Projects\CarsInventoryControl\EntityModels\bin\Release\EntityModels.dll
+C:\Users\aaguilar\Documents\Visual Studio 2015\Projects\CarsInventoryControl\EntityModels\bin\Release\EntityModels.pdb
+C:\Users\aaguilar\Documents\Visual Studio 2015\Projects\CarsInventoryControl\EntityModels\bin\Release\EntityFramework.dll
+C:\Users\aaguilar\Documents\Visual Studio 2015\Projects\CarsInventoryControl\EntityModels\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\aaguilar\Documents\Visual Studio 2015\Projects\CarsInventoryControl\EntityModels\bin\Release\Oracle.ManagedDataAccess.dll
+C:\Users\aaguilar\Documents\Visual Studio 2015\Projects\CarsInventoryControl\EntityModels\bin\Release\Oracle.ManagedDataAccess.EntityFramework.dll
+C:\Users\aaguilar\Documents\Visual Studio 2015\Projects\CarsInventoryControl\EntityModels\bin\Release\EntityFramework.xml
+C:\Users\aaguilar\Documents\Visual Studio 2015\Projects\CarsInventoryControl\EntityModels\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\aaguilar\Documents\Visual Studio 2015\Projects\CarsInventoryControl\EntityModels\obj\Release\EntityModels.dll
+C:\Users\aaguilar\Documents\Visual Studio 2015\Projects\CarsInventoryControl\EntityModels\obj\Release\EntityModels.pdb

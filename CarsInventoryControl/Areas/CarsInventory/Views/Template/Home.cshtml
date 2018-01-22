@@ -1,0 +1,97 @@
+﻿@using RazorEngine
+@using RazorEngine.Templating
+@using Newtonsoft.Json
+@using CarsInventoryControl
+@using CarsInventoryControl.Areas.CarsInventory.Models
+@model GridState
+@{
+    ViewBag.Title = "Home";
+    
+}
+
+<h2 data-bind="text: dummy"></h2>
+
+<!-- This is the search window-->
+<div class="affix col-md-2 col-md-offset-10 panel-group ">
+    <div class="panel-group" id="accordion">
+        <div class="panel panel-default">
+            <div class="panel-heading accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" data-target="#collapseOne">
+                <h4 class="panel-title">Advanced Search</h4>
+
+            </div>
+            <div id="collapseOne" class="panel-collapse collapse search-collapse">
+                <div data-bind="with: searchOptions" class="panel-body search-collapse">
+                    <div class="row col-md-12">
+                        <span class="col-md-6">Location</span>
+                        <input type="text" class="col-md-6" data-bind="text: LocationNo, value: LocationNo" />
+                    </div>
+                    <div class="row col-md-12">
+                        <span class="col-md-6">A. Control ID</span>
+                        <input type="text" class="col-md-6" data-bind="text: AvailabilityControlId, value: AvailabilityControlId" />
+                    </div>
+                    <div class="row col-md-12">
+                        <span class="col-md-6">Requested By</span>
+                        <input type="text" class="col-md-6" data-bind="text: RequestedBy, value: RequestedBy" />
+                    </div>
+                    <div class="row col-md-12">
+                        <span class="col-md-6">Warehouse</span>
+                        <input type="text" class="col-md-6" data-bind="text: Warehouse, value: Warehouse" />
+                    </div>
+                    <div class="row col-md-12">
+                        <br/>
+                        <span class="col-md-9">Case Sensitive Search:</span>
+                        <input type="checkbox" class="col-md-3" data-bind="checked: CaseSensitiveSearch" />
+                    </div>
+                    <div class="row col-md-12">
+                        <br />
+                        <div class="col-md-offset-2 pull-left">
+                            <button class="btn btn-info" style="margin-right:15px;" data-bind="click: $parent.resetSearch">RESET</button>
+                        </div>
+                        <div class="pull-right">
+                            <button class="btn btn-primary" style="margin-right:15px;" data-bind="click: $parent.search">SEARCH</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container col-md-offset-2">
+    <h2>Inventory</h2>
+    <table class="table table-hover table-condensed table-bordered">
+        <!-- ko if: structure().length > 0 -->
+        <thead>
+            <tr class="text-primary">
+                <th>Location</th>
+                <th>Availability Control ID</th>
+                <th>Requested By</th>
+                <th>Warehouse</th>
+            </tr>
+        </thead>
+        <tbody data-bind="foreach: structure">
+            <tr>
+                <td data-bind="text: LocationNo, click: function(){ $parent.edit($data)}"></td>
+                <td data-bind="text: AvailabilityControlId, click: function(){ $parent.edit($data)}"></td>
+                <td data-bind="text: RequestedBy, click: function(){ $parent.edit($data)}"></td>
+                <td data-bind="text: Warehouse, click: function(){ $parent.edit($data)}"></td>
+            </tr>
+        </tbody>
+        <!-- /ko-->
+    </table>
+    <!-- ko if: structure().length == 0-->
+    <div class="container">
+        <div class="row col-md-12">
+            <span class="text-center">NO RESULTS</span>
+        </div>
+    </div>
+    <!-- /ko-->
+    <div class="row col-lg-offset-5">
+        <button data-bind="visible: paging.previousPageNumber() > 0, click: backPage " class="btn btn-lg btn-info ">Previous</button>
+        <button data-bind="visible: nextPageExists(), click: nextPage " class="btn btn-lg btn-primary " style="padding: 10px 35px;">  Next  </button>
+    </div>
+</div>
+<script>
+    var ViewModelCars = new ViewModels.CarsInventory.Cars(@Html.Raw(Json.Encode(Model)));
+    ko.applyBindings(ViewModelCars);
+</script>

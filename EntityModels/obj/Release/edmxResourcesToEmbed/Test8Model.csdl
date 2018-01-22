@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Test8Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="CARS_AVAILABILTY_CONTROL_TAB">
+    <Key>
+      <PropertyRef Name="LOCATION_NO" />
+    </Key>
+    <Property Name="LOCATION_NO" Type="String" MaxLength="35" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AVAILABILITY_CONTROL_ID" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="REQUESTED_BY" Type="String" MaxLength="35" FixedLength="false" Unicode="false" />
+    <Property Name="ROWVERSION" Type="DateTime" />
+    <Property Name="WAREHOUSE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="Test8Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="CARS_AVAILABILTY_CONTROL_TAB" EntityType="Self.CARS_AVAILABILTY_CONTROL_TAB" />
+  </EntityContainer>
+</Schema>

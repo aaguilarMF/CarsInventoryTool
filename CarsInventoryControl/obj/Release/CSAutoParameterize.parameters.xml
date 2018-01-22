@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="DefaultConnection-Web.config Connection String" description="DefaultConnection Connection String used in web.config by the application to access the database." defaultValue="Data Source=(LocalDb)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\aspnet-CarsInventoryControl-20180108120346.mdf;Initial Catalog=aspnet-CarsInventoryControl-20180108120346;Integrated Security=True" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\aaguilar\\Documents\\Visual\ Studio\ 2015\\Projects\\CarsInventoryControl\\CarsInventoryControl\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+  </parameter>
+  <parameter name="Test8Entities-Web.config Connection String" description="Test8Entities Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/Test8Model.csdl|res://*/Test8Model.ssdl|res://*/Test8Model.msl;provider=Oracle.ManagedDataAccess.Client;provider connection string=&quot;DATA SOURCE=csavsdbt2.magnaflow.com:1521/test8;PASSWORD=CARX1APP;PERSIST SECURITY INFO=True;USER ID=CARX1APP&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\aaguilar\\Documents\\Visual\ Studio\ 2015\\Projects\\CarsInventoryControl\\CarsInventoryControl\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='Test8Entities']/@connectionString" />
+  </parameter>
+  <parameter name="Prod8Entities-Web.config Connection String" description="Prod8Entities Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/Prod8Model.csdl|res://*/Prod8Model.ssdl|res://*/Prod8Model.msl;provider=Oracle.ManagedDataAccess.Client;provider connection string=&quot;DATA SOURCE=10.0.4.132:1521/Prod8;PASSWORD=flash;PERSIST SECURITY INFO=True;USER ID=CARX1APP&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\aaguilar\\Documents\\Visual\ Studio\ 2015\\Projects\\CarsInventoryControl\\CarsInventoryControl\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='Prod8Entities']/@connectionString" />
+  </parameter>
+</parameters>

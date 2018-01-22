@@ -1,0 +1,80 @@
+﻿
+@{
+    ViewBag.Title = "Add";
+}
+<div class="affix col-md-offset-0">
+    <a class="" style="margin-right:15px; font-size:xx-large; cursor:pointer;" data-bind="click: back">BACK</a>
+</div>
+<div class="container">
+
+
+    <div class="row">
+        <!-- ko if: trueCarEntry() ==null-->
+        <div class="container" data-bind="with:carEntry">
+            <h2>ADD:</h2>
+            <div class="col-md-12">
+                <div class="row col-md-12">
+                    <span class="col-md-2">Location</span>
+                    <input type="text" class="col-md-6" data-bind="text: LocationNo, value: LocationNo,event: {keypress: $parent.onEnter},valueUpdate: 'afterkeydown'" />
+                </div>
+                <div class="row col-md-12">
+                    <span class="col-md-2">Availability Control ID</span>
+                    <input type="text" class="col-md-6" data-bind="text: AvailabilityControlId, value: AvailabilityControlId,event: {keypress: $parent.onEnter},valueUpdate: 'afterkeydown'" />
+                </div>
+                <div class="row col-md-12">
+                    <span class="col-md-2">Requested By</span>
+                    <input type="text" class="col-md-6" data-bind="text: RequestedBy, value: RequestedBy,event: {keypress: $parent.onEnter},valueUpdate: 'afterkeydown'" />
+                </div>
+                <div class="row col-md-12">
+                    <span class="col-md-2">Warehouse</span>
+                    <input type="text" class="col-md-6" data-bind="text: Warehouse, value: Warehouse,event: {keypress: $parent.onEnter},valueUpdate: 'afterkeydown'" />
+                </div>
+            </div>
+        </div>
+        <!-- /ko -->
+        <br />
+        <!-- ko if: trueCarEntry() !=null-->
+        <h2>Data Entry:</h2>
+        <div class="container">
+            <div data-bind="with:trueCarEntry" class="col-md-12">
+                <table class="table table-condensed table-bordered">
+                    <thead>
+                        <tr class="text-primary">
+                            <th>Location</th>
+                            <th>Availability Control ID</th>
+                            <th>Requested By</th>
+                            <th>Warehouse</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="text-bold" data-bind="text: LocationNo"></td>
+                            <td class="text-bold" data-bind="text: AvailabilityControlId"></td>
+                            <td class="text-bold" data-bind="text: RequestedBy"></td>
+                            <td class="text-bold" data-bind="text: Warehouse"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!-- /ko-->
+        <br>
+
+
+    </div>
+    <div class="row">
+        <div class="col-md-offset-1">
+            <button data-bind="visible: changed() && trueCarEntry() == null, click: add " class="btn btn-lg btn-info ">Add</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <button class="btn btn-lg btn-danger" data-bind="visible: trueCarEntry() != null, click: deleteEntry">Delete</button>
+            <button data-bind="visible: trueCarEntry() != null, click: function(){ navigateToEdit(trueCarEntry)} " class="btn btn-lg btn-info ">Edit</button>
+        </div>
+    </div>
+</div>
+<script>
+    var ViewModelCar = new ViewModels.CarsInventory.Car();
+    ko.applyBindings(ViewModelCar);
+</script>
